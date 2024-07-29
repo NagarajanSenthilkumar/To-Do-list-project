@@ -1,0 +1,197 @@
+@import url(https://fonts.googleapis.com/css?family=Syne:regular,500,600,700,800);
+:root {
+  /*===== Colors =====*/
+  /*color mode HSL (hue, saturation, lightness)*/
+  /*
+    change favorite color
+    Default: hsl(230, 55%, 55%)
+    Purple: hsl(245, 55%, 55%) -Blue: hsl(210,55%, 55%)
+    Pink: hsl(340,55%, 55%) - green: hsl(162, 55% 55%)
+    Orange: hsl(14,55%, 55%)
+
+    for more colors visit:
+    -> Choose any colors
+    -> Click on tab (Color Conversation)
+    -> Copy the color mode (HSL)
+    */
+  --hue: 230;
+  --first-color: hsl(var(--hue), 55%, 55%);
+  --first-color-light: hsl(var(--hue), 55%, 65%);
+  --first-color-alt: hsl(var(--hue), 50%, 50%);
+  --title-color: hsl(var(--hue), 30%, 95%);
+  --text-color: hsl(var(--hue), 20%, 80%);
+  --text-color-light: hsl(var(--hue), 20%, 70%);
+  /*backround #181E39 */
+  --body-color: hsl(var(--hue), 40%, 16%); 
+  /* container #1F2547 */
+  --container-color: hsl(var(--hue), 40%, 20%);
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Syne';
+  
+}
+body {
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  background-color:var(--body-color);
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  background-color:var(--body-color);
+}
+/*background #181E39 */
+/* container #1F2547 */
+
+.todo_app {
+  width: 100%;
+  max-width: 540px;
+  background-color: var(--container-color);
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px ;
+  border-radius: 10px;
+}
+
+.todo_app h2 {
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo_app h2 img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--first-color-light);
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+input::placeholder{
+  color: var(--text-color);
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background-color: var(--first-color);
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 16px;
+  cursor:pointer;
+  border-radius: 10px;
+}
+
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  color: var(--text-color);
+  font-weight: bold;
+  position: relative;
+}
+
+
+ul li::before {
+  content: '';
+  background-image: url(/assests/img/unchecked.png);
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  top:8px;
+  left: 8px;
+}
+
+ul li.checked {
+  color:var(--text-color);
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url(/assests/img/checked.png);
+
+}
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color:var(--first-color-light);
+  line-height: 40px;
+  text-align: center;
+}
+
+ul li span:hover {
+  color: var(--text-color);
+  background-color: var(--first-color-alt);
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 375px) {
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 0;
+  }
+  button {
+    width: 100%;
+  }
+  #input-box {
+    width: 100px;
+    padding: 15px 0px 15px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 0;
+  }
+  button {
+    width: 100%;
+  }
+  #input-box {
+    width: 100px;
+    padding: 15px 0px 15px 20px;
+  }
+}
